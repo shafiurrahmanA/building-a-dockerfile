@@ -1,0 +1,56 @@
+rahman@rahman:~$ cat Dockerfile
+FROM ubuntu
+
+MAINTAINER rahman
+
+RUN apt-get update
+
+CMD ["echo", "welcome to kloudone"]
+
+rahman@rahman:~$ docker build .
+Sending build context to Docker daemon  700.6MB
+Step 1/4 : FROM ubuntu
+latest: Pulling from library/ubuntu
+5d3b2c2d21bb: Pull complete 
+3fc2062ea667: Pull complete 
+75adf526d75b: Pull complete 
+Digest: sha256:b4f9e18267eb98998f6130342baacaeb9553f136142d40959a1b46d6401f0f2b
+Status: Downloaded newer image for ubuntu:latest
+ ---> 4dd97cefde62
+Step 2/4 : MAINTAINER rahman
+ ---> Running in a5fd66efd2af
+Removing intermediate container a5fd66efd2af
+ ---> 08e027092e4b
+Step 3/4 : RUN apt-get update
+ ---> Running in 796933bb946e
+Get:1 http://archive.ubuntu.com/ubuntu focal InRelease [265 kB]
+Get:2 http://security.ubuntu.com/ubuntu focal-security InRelease [109 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal-backports InRelease [101 kB]
+Get:5 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 Packages [21.6 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal/main amd64 Packages [1275 kB]
+Get:7 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [659 kB]
+Get:8 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 Packages [178 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal/multiverse amd64 Packages [177 kB]
+Get:10 http://archive.ubuntu.com/ubuntu focal/restricted amd64 Packages [33.4 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal/universe amd64 Packages [11.3 MB]
+Get:12 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [676 kB]
+Get:13 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [210 kB]
+Get:14 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages [29.6 kB]
+Get:15 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [938 kB]
+Get:16 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [1066 kB]
+Get:17 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages [4301 B]
+Fetched 17.2 MB in 25s (701 kB/s)
+Reading package lists...
+Removing intermediate container 796933bb946e
+ ---> 3ee4ec7756f6
+Step 4/4 : CMD ["echo", "welcome to kloudone"]
+ ---> Running in 8c23b8dc5164
+Removing intermediate container 8c23b8dc5164
+ ---> e113fe71c1ba
+Successfully built e113fe71c1ba
+rahman@rahman:~$
+
+
+
+
